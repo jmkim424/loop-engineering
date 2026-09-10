@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TETRIS LOOP</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="game.js" defer></script>
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <main class="cabinet">
+    <h1 class="title">TETRIS LOOP</h1>
+
+    <dl class="hud">
+      <dt class="hud-label">점수:</dt>
+      <dd id="score-value" class="hud-value">0</dd>
+      <dt class="hud-label">제거한 줄:</dt>
+      <dd id="lines-value" class="hud-value">0</dd>
+      <dt class="hud-label">레벨:</dt>
+      <dd id="level-value" class="hud-value">1</dd>
+      <dt class="hud-label">게임 상태:</dt>
+      <dd id="status-value" class="hud-value">READY</dd>
+    </dl>
+
+    <div class="stage">
+      <div id="board" class="board"></div>
+    </div>
+
+    <button id="start-button" class="start-button" type="button">시작</button>
+
+    <section id="gameover-panel" class="gameover" hidden>
+      <dl class="final">
+        <dt class="final-label">최종 점수:</dt>
+        <dd id="final-score" class="final-value">0</dd>
+        <dt class="final-label">제거한 줄:</dt>
+        <dd id="final-lines" class="final-value">0</dd>
+      </dl>
+
+      <form id="save-form" class="save-form">
+        <input id="name-input" class="name-input" type="text" placeholder="이름" autocomplete="off">
+        <button id="save-button" class="save-button" type="submit">저장</button>
+      </form>
+
+      <p id="save-message" class="save-message"></p>
+
+      <ol id="leaderboard-list" class="leaderboard"></ol>
+      <p id="leaderboard-empty" class="leaderboard-empty">아직 기록이 없습니다.</p>
+
+      <button id="clear-button" class="clear-button" type="button">기록 초기화</button>
+    </section>
+
+    <p class="controls">← → ↓ 이동 · ↑ 회전 · Space 하드 드롭 · P 일시정지</p>
+  </main>
+</body>
+</html>
